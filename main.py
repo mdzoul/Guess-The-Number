@@ -41,19 +41,19 @@ def choose_difficulty():
             computer_num = random.randint(1, 20)
             refresh()
             print("\33[32m---Easy Mode---\33[0m")
-            print("I am thinking of a number between 1 and 20\n")
+            print("The number is between 1 and 20\n")
         elif difficulty == 'normal':
             difficulty_chosen = True
             computer_num = random.randint(1, 100)
             refresh()
             print("\33[33m---Normal Mode---\33[0m")
-            print("I am thinking of a number between 1 and 100\n")
+            print("The number is between 1 and 100\n")
         elif difficulty == 'hard':
             difficulty_chosen = True
             computer_num = random.randint(1, 1000)
             refresh()
             print("\33[31m---Normal Mode---\33[0m")
-            print("I am thinking of a number between 1 and 1000\n")
+            print("The number is between 1 and 1000\n")
         else:
             refresh()
             print("\33[31m[Invalid input]\33[0m")
@@ -63,7 +63,7 @@ def game():
         end_game = False
         while not end_game:
             
-            print(f"You have \33[1;31m{lives_left(lives)}\33[0m lives remaining")
+            print(f"\33[1;4;31m{lives_left(lives)}\33[0m lives left")
             user_num = int(input("Guess a number: "))
             if user_num == computer_num:
                 end_game = True
@@ -103,6 +103,6 @@ while not should_stop:
 
     game()
 
-    time.sleep(1.5)
+    time.sleep(2)
     refresh()
     restart_decision()
